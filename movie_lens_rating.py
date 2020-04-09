@@ -17,7 +17,7 @@ lines = sc.textFile("/home/san/pyspark_codes/ml-100k/u.data")
 #Rating : 196(userid)    242(movieid)    3(Rating)       881250949(timestamp) : 3  
 ratings = lines.map(lambda x: x.split()[2])
 #Count all Value to get the Ratings occured
-#results: (Value: count of Value occured)
+#results: {Value: Count of Value occured}
 result = ratings.countByValue()
 
 sortedResults = collections.OrderedDict(sorted(result.items()))
