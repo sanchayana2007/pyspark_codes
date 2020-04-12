@@ -32,8 +32,9 @@ for result in results:
 
 #Reduce the RDD by key ie group by Stationid and get the min= SQL Group stn id  by and get min Temp--> (ITE00100554  5.36F,EZE00100082  7.70F)
 #** All the Non Exitant fields are already Filtered before
+#In reducebyKey groupby Key and other lambda operations will be on  Values  
 minTemps = stationTemps.reduceByKey(lambda x, y: min(x,y))
 
 results = minTemps.collect();
 for result in results:
-    print(result[0] + "\t{:.2f}F".format(result[1]))
+    print(result[0] ,result[1])

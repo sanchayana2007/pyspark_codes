@@ -20,7 +20,8 @@ rdd = lines.map(parseLine)
 #mapValues(lambda x: (x, 1)) -->  (Values ie No of friends,1)--> {40: (465,1)}
 friends1tuple = rdd.mapValues(lambda x: (x, 1))
 
-#reduceByKey= Aggregate on Key ie Age sum (NoFrinds,1)-->  {40: (465+243,1+1)}-->  {40: (708,2)}
+#reduceByKey= Aggregate on Key ie Age sum (NoFrinds,Count of Age)-->  {40: (465+243,1+1)}-->  {40: (708,2)}
+#In reduceByKey it will groupby key and  all operations will be o the Values of subsequent 
 totalsByAge =friends1tuple.reduceByKey(lambda x, y: (x[0] + y[0], x[1] + y[1]))
 print("totals by Age ")
 results = totalsByAge.collect()
