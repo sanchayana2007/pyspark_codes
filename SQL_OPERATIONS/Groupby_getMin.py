@@ -10,7 +10,7 @@ def parseLine(line):
     temperature = float(fields[3]) * 0.1 * (9.0 / 5.0) + 32.0
     return (stationID, entryType, temperature)
 
-lines = sc.textFile("./resourse/1800.csv")
+lines = sc.textFile("/home/san/pyspark_codes/resourse/1800.csv")
 
 #Data : ITE00100554,18000101,TMAX,-75,,,E,
 #Data:  ITE00100554,18000101,TMIN,-148,,,Ei

@@ -12,7 +12,7 @@ def parseLine(line):
     Price = float(fields[2])# Its mandatory to add 
     return (Custid, Price)
 
-lines = sc.textFile("./resourse/customer-orders.csv")
+lines = sc.textFile("/home/san/pyspark_codes/resourse/customer-orders.csv")
 
 #Create a key Value RDD dict of Cid , Price of items--> {44:23.44}
 cust_orders = lines.map(parseLine)

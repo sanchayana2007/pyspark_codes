@@ -12,7 +12,7 @@ def parseLine(line):
     numFriends = int(fields[3])
     return (age, numFriends)
 
-lines = sc.textFile("./resourse/fakefriends.csv")
+lines = sc.textFile("/home/san/pyspark_codes/resourse/fakefriends.csv")
 
 #Create a key Value RDD dict of Age , Num of friends--> {40,465}
 rdd = lines.map(parseLine)

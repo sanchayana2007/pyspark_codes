@@ -9,7 +9,7 @@ sc = SparkContext(conf = conf)
 
 #Please get the file in the context object 
 #textfile loads and breaks up each line as  a value in RDD
-lines = sc.textFile("/home/san/pyspark_codes/ml-100k/u.data")
+lines = sc.textFile("/home/san/pyspark_codes/resourse/ml-100k/u.data")
 
 #196(userid)	242(movieid)	3(Rating)	881250949(timestamp)
 #Split by whitespace and Extract the Ratings for a Line and put all in a RDD(Ratings)

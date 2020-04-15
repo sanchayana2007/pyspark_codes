@@ -7,7 +7,7 @@ def normalizeWords(text):
 conf = SparkConf().setMaster("local").setAppName("WordCount")
 sc = SparkContext(conf = conf)
 
-input = sc.textFile("./resourse/book.txt")
+input = sc.textFile("/home/san/pyspark_codes/resourse/book.txt")
 
 #create a Regex with any Capital letter converted to small
 words = input.flatMap(normalizeWords)
